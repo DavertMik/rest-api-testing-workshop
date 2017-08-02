@@ -1,5 +1,8 @@
 node_modules
 bower_components
+demo/vendor
+demo/wordpress
+demo/tests/_output
 dist
 *.log
 .sass-cache

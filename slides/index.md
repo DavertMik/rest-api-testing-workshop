@@ -1,11 +1,10 @@
-# BROWSER TESTING WIZARDRY
+# Training
 
-## WITH CODECEPTION
+## Testing Business Expectations.
 
 ![](http://codeception.com/images/logo.svg)
 
-
-davertmik.github.io/benelux-tutorial
+by Michael Bodnarchuk
 
 
 2017
