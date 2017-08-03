@@ -1,9 +1,13 @@
 [
     "index.md",
-    "me.md",
-    "testing.md",
-    "pause.md",
-    "codeception.md",
-    "pause.md",
-    "practice.md"
+    { "filename": "codeception-web.md", "attr": 
+      { "data-separator-vertical": "\n\n\n" }
+    },
+    
+    { "filename": "codeception-bad-practices.md", "attr": 
+      { "data-background": "#666", "data-separator-vertical": "\n\n\n" }
+    },    
+    { "filename": "tutorial.md", "attr": 
+      { "data-background": "#D1C4E9", "data-separator-vertical": "\n\n\n" }
+    }
 ]

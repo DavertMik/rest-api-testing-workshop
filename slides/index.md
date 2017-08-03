@@ -1,6 +1,6 @@
 # Training
 
-## Testing Business Expectations.
+## End 2 End Testing for Web Apps
 
 ![](http://codeception.com/images/logo.svg)
 
