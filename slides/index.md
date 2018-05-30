@@ -1,10 +1,11 @@
-# Training
+# Workshop
 
-## End 2 End Testing for Web Apps
+## MASTERING REST API TESTS
+## WITH CODECEPTION
 
 ![](http://codeception.com/images/logo.svg)
 
 by Michael Bodnarchuk
 
 
-2017
+2018

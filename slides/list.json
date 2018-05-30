@@ -1,13 +1,14 @@
 [
     "index.md",
-    { "filename": "codeception-web.md", "attr": 
-      { "data-separator-vertical": "\n\n\n" }
-    },
-    
-    { "filename": "codeception-bad-practices.md", "attr": 
-      { "data-background": "#666", "data-separator-vertical": "\n\n\n" }
+    "me.md",
+    "codeception.md",
+    { "filename": "sw.md", "attr": 
+      { "data-background": "#D1C4E9", "data-separator-vertical": "\n\n\n" }
     },    
-    { "filename": "tutorial.md", "attr": 
+    { "filename": "swagger.md", "attr": 
+      { "data-background": "#D1C4E9", "data-separator-vertical": "\n\n\n" }
+    },
+    { "filename": "api_practice.md", "attr": 
       { "data-background": "#D1C4E9", "data-separator-vertical": "\n\n\n" }
     }
 ]

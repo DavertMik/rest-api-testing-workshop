@@ -9,7 +9,7 @@
 * **full stack** testing framework
 * modules to solve **90% of common tasks**
 * **unified APIs** for all modules
-* **>5M** installations on Packagist
+* **>8M** installations on Packagist
 
 ---
 
@@ -202,36 +202,6 @@ $I->seeResponseMatchesJsonType([
 
 ---
 
-## BDD Tests
-
-* Business specifications written by examples
-* Example scenarios in plain English (Cucumber, Behat)
-* Scenarios can be executed as tests
-
----
-
-### Example
-
-```gherkin
-Feature: content
-  In order to manage content article in the web
-  As an owner
-  I need to create modify trash publish and Unpublish content article
-
-  Background:
-    Given Joomla CMS is installed
-    When Login into Joomla administrator with username "admin" and password "admin"
-    Then I see administrator dashboard
-
-  Scenario: Create an Article
-    Given There is a add content link
-    When I create new content with field title as "My_Article" and content as a "This is my first article"
-    And I save an article
-    Then I should see the "Article successfully saved." message
-```
-
----
-
 ## Conception
 
 ---
@@ -275,4 +245,24 @@ Feature: content
 * Codeception provides scenario DSL
 * Codeception comes with predefined modules
 * Codeception separates tests from config/support
-* Codeception has BDD support
+
+---
+
+## API Testing
+
+---
+
+## Testing REST APIs
+
+* For consistent data structure
+* For data inclusion
+* For actual result
+
+---
+
+## Testing types
+
+* External: 
+  * via PhpBrowser
+* Internal
+  * via Framework
