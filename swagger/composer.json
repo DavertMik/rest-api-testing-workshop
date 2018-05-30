@@ -1,9 +1,0 @@
-{
-    "require-dev": {
-        "codeception/codeception": "^2.4",
-        "flow/jsonpath": "^0.4.0"
-    },
-    "require": {
-        "fr3d/swagger-assertions": "^0.10.0"
-    }
-}
