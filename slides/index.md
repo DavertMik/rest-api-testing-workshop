@@ -1,11 +1,11 @@
-# BROWSER TESTING WIZARDRY
+# Workshop
 
+## MASTERING REST API TESTS
 ## WITH CODECEPTION
 
 ![](http://codeception.com/images/logo.svg)
 
+by Michael Bodnarchuk
 
-davertmik.github.io/benelux-tutorial
 
-
-2017
+2018

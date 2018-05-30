@@ -93,33 +93,6 @@ https://localhost:8000
 * projects
 * tasks
 
----
-
-
-## Selenium WebDriver
-
-* **WebDriver** is a protocol for browser control
-* **Selenium** is a API server to manage browsers via WebDriver
-* **ChromeDriver**, **MarionetteDriver** - drivers for browsers
-* **SauceLabs, BrowserStack** - remote WebDriver servers
-* **PhantomJS** chrome-based headless browser implementing WebDriver protocol
-
-
-![](img/webdriver-chart.jpg)
-
-
-## How to run browsers
-
-* Window Mode
- - via Selenium Server
- - via ChromeDriver, MarionetteDriver
-* Headless Mode
- - via Docker
- - with Xvfb (virtual framebuffer)
- - PhantomJS
-* Remotely
- - cloud testing providers
-
 
 ### Start Selenium
 
@@ -179,12 +152,19 @@ class TaskCest
 
 
 * Find which elements are needed to create a task
-* Find how to locate those elements. By
- * CSS *(most common)*
- * XPath *(most powerful)*
- * Field Names *(most stable)*
- * Field Labels *(most readable)*
+* Find how to locate those elements.
 * What is expected result?
+
+
+### Locators
+
+|      |     |
+|---|---|
+| CSS | `$I->seeElement('.new-task')` |
+| XPath | `$I->seeElement('//table/tr/td[2]')` |
+| Fuzzy | `$I->click('Hello')` |
+| Strict | `$I->click(['xpath' => '//nav/a[2]']);` |
+
 
 
 ```php
@@ -451,3 +431,118 @@ public function deleteTask(AcceptanceTester $I, \Page\ProjectPage $project)
     $I->dontSee($taskName);
 }
 ```
+
+---
+
+## Lifehacks
+
+
+### Codeception\Util\Locator
+
+* `combine` - merge 2 locators
+* `contains` - element that contains test
+* `elementAt` - get nth element in scope
+* `firstElement` - get the first element in scope
+* `find` - get element by locator and attributes
+* `href` - get link by href
+* `lastElement` - get last element in scope
+* `tabIndex` - get element by tab position
+
+
+### Element At Position
+
+
+```php
+$I->click('Edit', Locator::elementAt('#data-grid tr', 3));
+```
+
+![](img/grid.png)
+
+
+## Other Locators
+
+* Locate element with text inside
+
+```php
+Locator::contains('div[contenteditable]',  'hello world');
+```
+
+* Combine different selectors
+
+```php
+$I->see('Title', Locator::combine('h1','h2','h3'));
+
+```
+
+* [and more](http://codeception.com/docs/reference/Locator)
+
+---
+
+## Session Snapshots
+
+Don't login for each test
+
+```php
+if ($I->loadSessionSnapshot('login')) {
+    return;
+} // logged in
+$I->amOnPage('/login');
+$I->submitForm('#loginForm', [
+    'login' => $name, 
+    'password' => $password
+]);
+// saving snapshot
+$I->saveSessionSnapshot('login');
+
+```
+
+---
+
+
+### Wait For Elements
+
+* waitForElement
+* smartWait
+* performOn
+
+
+### SmartWait
+
+* works with Id/CSS/XPath/Strict locators
+* replaces `waitForElement`
+* add `wait: 5` to config
+* doesn't work with fuzzy locators
+
+---
+
+### Multi-Session Testing
+
+```php
+$joe = $I->haveFriend('joe');
+$joe->does(function($I) {
+   $I->amOnPage('/'); 
+});
+```
+
+---
+
+## Data Management
+
+* Using Laravel ORM
+* Using DB module
+* Using REST API
+
+---
+
+## Practice: Test TodoMVC application
+
+http://todomvc.com/examples/react/#/
+
+
+### Tasks
+
+* create todo
+* edit todo
+* delete todo
+* clear completed
+* filter todos
